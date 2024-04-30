@@ -1,0 +1,35 @@
+MDBoxLayout:
+    orientation: 'vertical'
+
+    MDTopAppBar:
+        md_bg_color: app.theme_cls.primary_color
+        elevation: 1
+        title: "Shopping list"
+
+    MDBoxLayout:
+        padding:10
+        spacing:10
+        pos_hint: {"y": 0.9}
+        #md_bg_color: "red"
+        size_hint_y: 0.12
+        MDTextField:
+            id: inputtodo
+            hint_text: "Въведи продукт"
+            required: True
+            mode: "round"
+            #size_hint_x: 0.9
+        MDRaisedButton:
+            text: "Добави"
+            #md_bg_color: "orange"
+            on_release: app.add_new_todo(inputtodo.text)
+
+    MDBoxLayout:
+        size_hint_x: 1
+        padding: 10
+        spacing: 10
+        MDScrollView:
+            MDList:
+                id: todo_list
+                size_hint_x: 1
+
+
